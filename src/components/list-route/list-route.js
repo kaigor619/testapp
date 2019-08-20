@@ -52,9 +52,9 @@ class ListRoute extends Component{
             );
         });
         return(
-            <DndProvider backend={HTML5Backend}>
+            // <DndProvider backend={HTML5Backend}>
                 <ListRouteContainer data={items}/>
-            </DndProvider>
+            // </DndProvider>
         );
     }
 }

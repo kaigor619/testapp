@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import update from "immutability-helper";
-import HTML5Backend from 'react-dnd-html5-backend';
-import {DndProvider} from 'react-dnd';
+import withDataHTML5 from '../hoc/withData-html5';
 import {removeItem, updateList} from '../../actions';
 import Card from '../card';
 
 const ListRouteContainer=({data})=>{
     if(data.length==0)
         return null;
+
     return(
         <ul className="list-group list-route">
             {data}
@@ -52,9 +52,8 @@ export class ListRoute extends Component{
             );
         });
         return(
-            <DndProvider backend={HTML5Backend}>
-                <ListRouteContainer data={items}/>
-            </DndProvider>
+            
+            <ListRouteContainer data={items}/>
         );
     }
 }
@@ -68,4 +67,4 @@ const mapDispatchToProps={
     removeItem,
     updateList
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ListRoute);
+export default connect(mapStateToProps, mapDispatchToProps)(withDataHTML5()(ListRoute));

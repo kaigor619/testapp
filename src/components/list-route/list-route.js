@@ -16,7 +16,7 @@ const ListRouteContainer=({data})=>{
     );
 }
 
-class ListRoute extends Component{
+export class ListRoute extends Component{
 
     constructor(props){
         super(props);
@@ -52,9 +52,9 @@ class ListRoute extends Component{
             );
         });
         return(
-            // <DndProvider backend={HTML5Backend}>
+            <DndProvider backend={HTML5Backend}>
                 <ListRouteContainer data={items}/>
-            // </DndProvider>
+            </DndProvider>
         );
     }
 }

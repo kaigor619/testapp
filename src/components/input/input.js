@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {addItem} from '../../actions';
 
-class Input extends Component{
+export class Input extends Component{
 
     constructor(props){
         super(props);
@@ -28,7 +28,7 @@ class Input extends Component{
     }
     render(){
         return(
-            <form onSubmit={this.onSubmit} action="" method="post">
+            <form onSubmit={this.onSubmit} action="" method="post" id="formMap">
                 <input type="text" id="input-add-item" className="form-control" placeholder="Новая точка маршрута" onChange={this.onKeyDown} value={this.state.value}/>
             </form>
         );
